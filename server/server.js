@@ -7,6 +7,8 @@ const cookieSession = require("cookie-session");
 const passportStrategy = require("./passport");
 const app = express();
 
+// Use CORS middleware
+app.use(cors());
 
 app.use(
 	cookieSession({
@@ -21,7 +23,7 @@ app.use(passport.session());
 
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		origin: "http://localhost:5000",
 		methods: "GET,POST,PUT,DELETE",
 		credentials: true,
 	})
